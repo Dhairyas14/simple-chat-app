@@ -1,0 +1,28 @@
+{
+    "replacements": [
+        {
+            "from": "react",
+            "to": "*"
+        },
+        {
+            "from": "woah",
+            "to": "😲"
+        },
+        {
+            "from": "hey",
+            "to": "👋"
+        },
+        {
+            "from": "lol",
+            "to": "😂"
+        },
+        {
+            "from": "like",
+            "to": "💟"
+        },
+        {
+            "from": "congratulations",
+            "to": "🎉"
+        }
+    ]
+}

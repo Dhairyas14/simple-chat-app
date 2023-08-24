@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Socket.IO Chat</title>
+    <title>Chat App</title>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="sidebar">
-            <h1 class="sidebar-header">Your Name</h1>
-            <ul class="contact-list">
-                <li class="contact-list-item">John Doe</li>
-                <!-- Add more contact list items as needed -->
-            </ul>
-        </div>
-        <div class="chat-area">
-            <h1 class="chat-area-header">John</h1>
-            <div class="message-container">
-                <div class="message received">Hello there! How's it going?</div>
-                <div class="message sent">Hi! I'm doing great. How about you?</div>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Your Name</h2>
             </div>
-            <div class="input-container">
-                <input type="text" class="message-input" placeholder="Type your message...">
-                <button class="send-button">Send</button>
+            <ul class="contact-list">
+                <!-- Contacts will be dynamically added here -->
+                <li>John Doe</li>
+            </ul>
+        </aside>
+        <div class="chat-area">
+            <div class="chat-header">
+                <h2>John Doe</h2>
+            </div>
+            <div class="chat-box">
+                <!-- Chat messages will be dynamically added here -->
+                <div class="message received">Hi, How are you?</div>
+                <div class="message sent">I am fine, and you?</div>
+            </div>
+            <div class="input-box">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendButton">Send</button>
             </div>
         </div>
     </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
