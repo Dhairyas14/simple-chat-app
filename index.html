@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Socket.io Chat App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Socket.IO Chat</title>
 </head>
 <body>
-  <ul id="messages"></ul>
-  <form id="form" action="">
-    <input id="input" autocomplete="off" /><button>Send</button>
-  </form>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(function () {
-      var socket = io();
-
-      $('form').submit(function () {
-        socket.emit('chat message', $('#input').val());
-        $('#input').val('');
-        return false;
-      });
-
-      socket.on('chat message', function (msg) {
-        $('#messages').append($('<li>').text(msg));
-      });
-    });
-  </script>
+    <div class="chat-container">
+        <div class="sidebar">
+            <h1 class="sidebar-header">Your Name</h1>
+            <ul class="contact-list">
+                <li class="contact-list-item">John Doe</li>
+                <!-- Add more contact list items as needed -->
+            </ul>
+        </div>
+        <div class="chat-area">
+            <h1 class="chat-area-header">John</h1>
+            <div class="message-container">
+                <div class="message received">Hello there! How's it going?</div>
+                <div class="message sent">Hi! I'm doing great. How about you?</div>
+            </div>
+            <div class="input-container">
+                <input type="text" class="message-input" placeholder="Type your message...">
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
 </body>
 </html>

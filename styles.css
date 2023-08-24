@@ -1,0 +1,135 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.chat-container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #128C7E;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    /* Add border line */
+    padding-bottom: 10px;
+    /* Add spacing below header */
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    /* Add border line */
+    padding-bottom: 10px;
+}
+
+.contact-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #0D6E5B;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-list-item:last-child {
+    border-bottom: none;
+}
+
+.contact-list-item:hover {
+    background-color: #0D6E5B;
+}
+
+/* Modify these styles in your existing CSS */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.chat-area-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    /* Add border line */
+    padding-bottom: 10px;
+    /* Add spacing below header */
+
+}
+
+.message-container {
+    flex: 1;
+    /* Occupy remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    /* Add overflow-y property for scrolling */
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    /* Add border style */
+}
+
+.sent {
+    background-color: #DCF8C6;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    /* Add border style */
+}
+
+.message.sender {
+    color: #000;
+    align-self: flex-start;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    /* Add border style */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.send-button {
+    background-color: #128C7E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

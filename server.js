@@ -1,28 +1,28 @@
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io');
+const socketIO = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIO(server);
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static('public')); // Serve static files from the 'public' folder
 
 io.on('connection', (socket) => {
-    console.log('A user connected');
+  console.log('A user connected');
 
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg);
-    });
+  socket.on('message', (data) => {
+    console.log('Received message:', data.message);
+    // Broadcast the message to all connected clients
+    io.emit('message', { message: data.message });
+  });
 
-    socket.on('disconnect', () => {
-        console.log('A user disconnected');
-    });
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
 });
 
-const PORT = 3000;
+const PORT = 4000;
 server.listen(PORT, () => {
-    console.log('Server is running on http://localhost:${PORT}');
+  console.log(`Server is running on port ${PORT}`);
 });
