@@ -74,28 +74,9 @@ sendButton.addEventListener('click', () => {
     message = replaceWordsWithReplacements(message);
 
     if (message !== '') {
-        // Check if the message is the /help command
-        if (message === '/help') {
-            // Show the help pop-up
-            showHelpPopup();
-        } else {
-            socket.emit('message', message);
-        }
+        socket.emit('message', message);
         messageInput.value = '';
     }
-});
-
-
-// Show the help pop-up
-function showHelpPopup() {
-    const helpPopup = document.getElementById('helpPopup');
-    helpPopup.style.display = 'flex';
-}
-
-// Close the help pop-up
-document.getElementById('closeHelpButton').addEventListener('click', () => {
-    const helpPopup = document.getElementById('helpPopup');
-    helpPopup.style.display = 'none';
 });
 
 // Receive message
