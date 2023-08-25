@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Chat App</title>
 </head>
+
 <body>
+    <!-- Add this hidden modal pop-up -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter a username:</h2>
+            <input type="text" id="usernameInput" placeholder="Username">
+            <button id="submitUsernameButton">Add User</button>
+        </div>
+    </div>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -14,7 +24,6 @@
             </div>
             <ul class="contact-list">
                 <!-- Contacts will be dynamically added here -->
-                <li>John Doe</li>
             </ul>
         </aside>
         <div class="chat-area">
@@ -30,9 +39,18 @@
                 <input type="text" id="messageInput" placeholder="Type a message...">
                 <button id="sendButton">Send</button>
             </div>
+            <!-- Add this hidden help pop-up -->
+            <div id="helpPopup" class="modal">
+                <div class="modal-content">
+                    <h2>Help</h2>
+                    <p>This is the help message that you want to display.</p>
+                    <button id="closeHelpButton">Close</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

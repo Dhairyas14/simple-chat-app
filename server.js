@@ -16,6 +16,12 @@ const sentMessages = new Set();
 io.on('connection', (socket) => {
     console.log('A user connected');
 
+    // Listen for new user events
+    socket.on('newUser', (username) => {
+        // Broadcast the new user to all connected clients
+        io.emit('newUser', username);
+    });
+    
     // Listen for messages
     socket.on('message', (message) => {
         if (!sentMessages.has(message)) {
